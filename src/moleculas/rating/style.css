@@ -1,0 +1,24 @@
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 1.5em;
+    color: #ddd;
+    margin-right: 4px;
+    transition: color 0.3s;
+}
+
+.star.filled {
+    color: #ffcc00;
+}
+
+.star:hover {
+    color: #ffcc00;
+}
+
+.star:hover ~ .star {
+    color: #ddd;
+}

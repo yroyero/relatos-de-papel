@@ -1,0 +1,78 @@
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 16px;
+    max-width: 300px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.5em;
+    color: #333;
+    margin: 2px 0;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.card-image {
+    width: 80px;
+    height: 135px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.card-author,
+.card-genre,
+.card-rating,
+.card-price {
+    font-size: 1em;
+    margin: 4px 0;
+    color: #666;
+}
+
+.card-price {
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+.card-add-to-cart {
+    padding: 10px 10px;
+    background-color: #335658;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 48px;
+    height: 48px;
+}
+
+.card-add-to-cart:hover {
+    background-color: #203639;
+}

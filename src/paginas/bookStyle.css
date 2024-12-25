@@ -1,0 +1,33 @@
+.featured-products {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.featured-products__filters {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.featured-products__filters label {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.featured-products__filters input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.featured-products__filters input:focus {
+    border-color: #007bff;
+    outline: none;
+}

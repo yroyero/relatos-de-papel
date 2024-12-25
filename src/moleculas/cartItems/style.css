@@ -1,0 +1,37 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  width: 90%;
+}
+
+.cart-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+ .cart-content-items{
+    width: 70%;
+ }
+
+ .cart-content-items ul{
+    padding-left: 0;
+ }
+
+
+ .cart-content-resume ul{
+    padding-left: 0;
+    list-style: none;
+ }
+
+ .cart-content-resume .concept{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+ }
+
+ .cart-content-resume .total{
+    font-weight: 600;
+ }
