@@ -1,35 +1,38 @@
-import React, { createContext, useContext, ReactNode, useEffect } from 'react';
-import { CartItem, Product, ShopState } from '../@types';
+import { createContext, useContext, ReactNode } from 'react';
+import { Product, ShopState } from '../@types';
 import { useShopData } from '../hooks/useShop';
 
 
 interface ShopContextProps extends ShopState {
     addToCart: (product: Product) => void;
     removeFromCart: (productId: number) => void;
+    clearCart: () => void;
     addNotification: (message: string) => void;
     removeNotification: (index: number) => void;
+    clearNotifications: () => void;
 }
 
 const ShopContext = createContext<ShopContextProps | undefined>(undefined);
 
 export const ShopProvider = ({ children }: { children: ReactNode }) => {
-    const [cart, setCart] = React.useState<CartItem[]>([]);
     const {data, handleAddToCart,
-        handelRemoveFromCart,
+        handleRemoveFromCart,
+        handleClearCart,
         handleAddNotification,
-        handleRemoveNotification} = useShopData();
-
-    useEffect(() => {
-        setCart(data.cart);
-    }, [data.cart]);
+        handleRemoveNotification,
+        handleClearNotifications} = useShopData();
 
     const addToCart = (product: Product) => {
         handleAddToCart(product);
     };
 
     const removeFromCart = (productId: number) => {
-       handelRemoveFromCart(productId);
+       handleRemoveFromCart(productId);
     };
+
+    const clearCart = () => {
+        handleClearCart();
+    }
 
     const addNotification = (message: string) => {
        handleAddNotification(message);
@@ -39,6 +42,10 @@ export const ShopProvider = ({ children }: { children: ReactNode }) => {
         handleRemoveNotification(index);
     };
 
+    const clearNotifications = () => {
+        handleClearNotifications();
+    }
+
     return (
         <ShopContext.Provider
             value={{
@@ -46,8 +53,10 @@ export const ShopProvider = ({ children }: { children: ReactNode }) => {
                 notifications: data.notifications,
                 addToCart,
                 removeFromCart,
+                clearCart,
                 addNotification,
-                removeNotification
+                removeNotification,
+                clearNotifications
             }}
         >            {children}
         </ShopContext.Provider>

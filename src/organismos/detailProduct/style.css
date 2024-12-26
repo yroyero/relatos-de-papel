@@ -49,6 +49,11 @@
 }
 
 .info-container button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    gap: 16px;
     padding: 10px 20px;
     background-color: #335658;
     color: #fff;
@@ -57,9 +62,9 @@
     cursor: pointer;
     transition: background-color 0.3s;
     align-self: flex-start;
-    margin-top: 16px;
 }
 
 .info-container button:hover {
     background-color: #203639;
 }
+

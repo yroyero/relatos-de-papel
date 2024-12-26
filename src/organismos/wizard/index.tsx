@@ -1,14 +1,61 @@
 import { useState } from "react";
 import CartItems from "../../moleculas/cartItems";
-import ShippingForm from "../shipping";
 import PaymentForm from "../payment";
 import "./style.css";
+import ShippingForm from "../shipping";
+import { PaymentData, Shipping } from "../../@types";
+import { useShop } from "../../context/ShopContext";
+import { useNavigate } from "react-router-dom";
 
 const ItemWizard: React.FC = () => {
+  const { clearCart, addNotification } = useShop();
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
+  const [shippingData, setShippingData] = useState<Shipping>({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    postalCode: "",
+  });
+  const [paymentData, setPaymentData] = useState<PaymentData>({
+    name: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+  });
 
-  const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 3));
-  const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));
+  const finalStep = (msg:string) => {
+    addNotification(msg);  
+    clearCart();
+    navigate("/home");
+  }
+
+  const nextStep = () => {
+    if (currentStep === 2) {
+      if (
+        !shippingData.name ||
+        !shippingData.email ||
+        !shippingData.phone ||
+        !shippingData.address ||
+        !shippingData.city ||
+        !shippingData.postalCode
+      ) {
+        alert("Todos los campos son requeridos");
+        return;
+      }
+    }
+    if (currentStep === 3) {
+      alert("Gracias por su compra");
+      finalStep("Compra realizada con éxito");
+    }
+    setCurrentStep((prev) => Math.min(prev + 1, 3));
+  };
+
+  const clearShoppingCart = () => {
+    finalStep("Compra cancelada");
+  };  
 
   return (
     <div className="item-wizard">
@@ -25,15 +72,17 @@ const ItemWizard: React.FC = () => {
       </div>
       <div className="item-wizard-content">
         {currentStep === 1 && <CartItems />}
-        {currentStep === 2 && <ShippingForm />}
-        {currentStep === 3 && <PaymentForm />}
+        {currentStep === 2 && (
+          <ShippingForm data={shippingData} setData={setShippingData} />
+        )}
+        {currentStep === 3 && <PaymentForm paymentData={paymentData} setPaymentData={setPaymentData} />}
       </div>
       <div className="item-wizard-buttons">
-        <button onClick={prevStep} disabled={currentStep === 1}>
-          Anterior
+        <button onClick={clearShoppingCart} className="cancel">
+          Cancelar
         </button>
-        <button onClick={nextStep} disabled={currentStep === 3}>
-          Siguiente
+        <button onClick={nextStep} >
+          {currentStep === 3 ? "Pagar" : "Siguiente"}
         </button>
       </div>
     </div>

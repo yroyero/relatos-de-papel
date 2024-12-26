@@ -1,0 +1,31 @@
+.notfound-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.notfound-container h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.notfound-container p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.notfound-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3b6567;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.notfound-container a:hover {
+    background-color: #203639;
+}

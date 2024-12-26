@@ -1,0 +1,38 @@
+.notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    color: #6e6e6e;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+.notification.info {
+    border-color: #17a2b8;
+}
+
+.notification:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notification svg {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.notification svg:hover {
+    color: #ff0000;
+}

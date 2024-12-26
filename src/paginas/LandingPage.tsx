@@ -14,11 +14,11 @@ const Landing: React.FC = () => {
     }, [navigate]);
 
     return (
-        <div>
+        <div className="landing-page">
             <div className="spinner">              
             </div>
-            <h1>Welcome to the Landing Page</h1>
-            <p>You will be redirected to the home page in 5 seconds...</p>
+            <h1>Bienvenido a Relatos de Papel</h1>
+            <p>Serás redirigido a la página de inicio en 5 segundos...</p>
         </div>
     );
 };

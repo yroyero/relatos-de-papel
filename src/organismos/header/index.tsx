@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import ShopCart from '../shopCart';
 import { Link, useLocation } from 'react-router-dom';
+import Alert from '../alerts';
 
 export const Header: React.FC = () => {
     const location = useLocation();    
@@ -26,8 +27,8 @@ export const Header: React.FC = () => {
                     <li className={isActive('/books')}>
                     <Link to="/books">Libros</Link>
                     </li>
-                    <li className={isActive('/shop')}>
-                        <Link to="/shop">Carrito</Link>
+                    <li className={isActive('/payment')}>
+                        <Link to="/payment">Carrito</Link>
                         </li>                    
                     <li className={isActive('/contact')}>
                         <Link to="/contact">Contacto</Link>
@@ -39,6 +40,7 @@ export const Header: React.FC = () => {
                     <FaShoppingCart/>
                     <span>3</span>
                 </div> */}
+                <Alert />
                 <ShopCart />
             </div>
         </div>

@@ -27,7 +27,7 @@ const DetailProduct: React.FC<BookDetailProps> = ({
                 <p><strong></strong> <Rating max={5} value={rating}/></p>
                 <p><strong>Fecha de lanzamiento:</strong> {releaseDate.toLocaleString()}</p>
                 <p><strong>Resumen:</strong> {summary}</p>
-                <button onClick={() =>  addToCart(book)}><FaShoppingCart />Añadir al carrito</button>
+                <button onClick={() =>  addToCart(book)} className="info-container-action"> <FaShoppingCart />Añadir al carrito</button>
             </div>
         </div>
     );

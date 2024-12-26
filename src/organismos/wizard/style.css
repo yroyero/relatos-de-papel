@@ -49,7 +49,7 @@
 
 .item-wizard-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 20px;
     width: 100%;
 }
@@ -65,11 +65,16 @@
     transition: background-color 0.3s;
 }
 
-.item-wizard-buttons button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.item-wizard-buttons button:hover {
+    background-color: #203639;
 }
 
-.item-wizard-buttons button:hover:not(:disabled) {
-    background-color: #0056b3;
+.item-wizard-buttons .cancel{
+    background-color: #cccccc;
+    color: #333;
+}
+
+.item-wizard-buttons button.cancel:hover {
+    background-color: #817f7f;
+    color: #fff;
 }

@@ -3,12 +3,35 @@ import { useShop } from "../../context/ShopContext";
 import CartItemCard from "../../atomos/item";
 import "./style.css";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ShopCart: React.FC = () => {
   const { cart } = useShop();
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [total, setTotal] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  const navigate = useNavigate();
+  let timer: NodeJS.Timeout;
+  const resetTimer = () => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      setIsCartVisible(false);
+    }, 7000);
+  };
+
+  useEffect(() => {
+    if (isCartVisible) {
+      resetTimer();
+      window.addEventListener("mousemove", resetTimer);
+      window.addEventListener("keydown", resetTimer);
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener("mousemove", resetTimer);
+      window.removeEventListener("keydown", resetTimer);
+    };
+  }, [isCartVisible]);
 
   const handleMenuClick = () => {
     setIsCartVisible(!isCartVisible);
@@ -24,6 +47,11 @@ const ShopCart: React.FC = () => {
     setTotalItems(auxTotalItems);
   }, [cart]);
 
+  const goToPayment = () => {
+    navigate("/payment");
+    setIsCartVisible(false);
+  };
+
   return (
     <div className="shop-cart">
       <button onClick={handleMenuClick}>
@@ -32,7 +60,7 @@ const ShopCart: React.FC = () => {
       </button>
       {isCartVisible && (
         <div className="shop-cart-dropdown">
-          <h2>Mi compra ({totalItems})</h2>
+          <h4>Mi compra ({totalItems})</h4>
           <ul>
             {cart.map((item) => (
               <CartItemCard
@@ -45,10 +73,12 @@ const ShopCart: React.FC = () => {
               />
             ))}
           </ul>
-          <div className="shop-cart-dropdown-footer">
-            <span>Total: $ {total}</span>
-            <button>Pagar</button>
-          </div>
+          {cart.length > 0 && (
+            <div className="shop-cart-dropdown-footer">
+              <span>Total: $ {total.toFixed(2)}</span>
+              <button onClick={goToPayment}>Pagar</button>
+            </div>
+          )}
         </div>
       )}
     </div>

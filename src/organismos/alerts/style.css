@@ -1,9 +1,9 @@
-.shop-cart {
+.alert {
     position: relative;
     width: 100%;
 }
 
-.shop-cart button {
+.alert button {
     padding: 1px;
     background-color:rgba(74, 97, 99, 0);
     color: #fff;
@@ -13,12 +13,12 @@
     transition: background-color 0.3s;
 }
 
-.shop-cart button:hover {
+.alert button:hover {
     background-color:rgb(159, 185, 179);
 }
 
 
-.shop-cart-button-quantity{
+.alert-button-quantity{
     position: absolute;
     top: -7px;
     right: -7px;
@@ -34,7 +34,7 @@
     font-size: 1em;
 }
 
-.shop-cart-dropdown {
+.alert-dropdown {
     position: absolute;
     top: 40px;
     right: 0;
@@ -47,18 +47,18 @@
     z-index: 1000;
 }
 
-.shop-cart-dropdown h4 {
+.alert-dropdown h4 {
     margin-top: 0;
     color: #333;
 }
 
-.shop-cart-dropdown ul {
+.alert-dropdown ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.shop-cart-dropdown li {
+.alert-dropdown li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,24 +66,24 @@
     border-bottom: 1px solid #ddd;
 }
 
-.shop-cart-dropdown li:last-child {
+.alert-dropdown li:last-child {
     border-bottom: none;
 }
 
-.shop-cart-dropdown-footer{
+.alert-footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-top: 16px;
 }
 
-.shop-cart-dropdown-footer span {
+.alert-footer span {
     font-size: 1.2em;
     color: #333;
     font-weight: 600;
 }
 
-.shop-cart-dropdown-footer button {
+.alert-footer button {
     padding: 10px 20px;
     background-color: #335658;
     color: #fff;

@@ -34,3 +34,19 @@ export interface ReviewProps {
     date: string;
     rating: number;
 }
+
+export interface Shipping {
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    city: string;
+    postalCode: string
+}
+
+export interface PaymentData {
+    name: string;
+    cardNumber: string;
+    expiryDate: string;
+    cvv: string;
+}

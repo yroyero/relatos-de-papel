@@ -1,17 +1,13 @@
 
-import CartItems from '../moleculas/cartItems';
+import { useShop } from '../context/ShopContext';
 import ItemWizard from '../organismos/wizard';
 
-
-
-
-// Formulario de pago
-
-
 const ShopPage: React.FC = () => {
+    const { cart } = useShop();
     return (
         <div>
-            <ItemWizard />
+            {cart.length > 0 && <ItemWizard />}
+            {cart.length === 0 && <h1>No hay productos en el carrito</h1>}
         </div>
     );
 };

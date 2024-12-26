@@ -9,6 +9,7 @@ import Books from './paginas/BooksPage';
 import BookDetail from './paginas/BookDetailPage';
 import ShopPage from './paginas/ShopPage';
 import ContactPage from './paginas/ContactPage';
+import NotFound from './paginas/NotFound';
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
           <Route path="/home" element={<Layout><Home/></Layout>}/>
           <Route path="/books" element={<Layout><Books/></Layout>} />
           <Route path="/detail/:idBook" element={<Layout><BookDetail/></Layout>} />
-          <Route path="/shop" element={<Layout><ShopPage/></Layout>} />
+          <Route path="/payment" element={<Layout><ShopPage/></Layout>} />
           <Route path="/contact" element={<Layout><ContactPage/></Layout>} />
-          <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
         </BrowserRouter>
     </ShopProvider>   

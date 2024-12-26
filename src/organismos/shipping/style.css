@@ -1,0 +1,52 @@
+.shipping-form {
+    min-width: 90%;
+    margin: 0 auto;
+}
+
+.shipping-form h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.shipping-form-content{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.shipping-form-fields{
+    width: 50%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #3b6567;
+    outline: none;
+}
+
+
+.error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 4px;
+}

@@ -15,8 +15,12 @@ export const useShopData = () => {
         dispatch({ type: 'ADD_TO_CART', payload: product });
     };
 
-    const handelRemoveFromCart = (productId: number) => {
+    const handleRemoveFromCart = (productId: number) => {
         dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
+    };
+
+    const handleClearCart = () => {
+        dispatch({ type: 'CLEAR_CART' });
     };
 
     const handleAddNotification = (message: string) => {
@@ -27,11 +31,17 @@ export const useShopData = () => {
         dispatch({ type: 'REMOVE_NOTIFICATION', payload: index });
     };
 
+    const handleClearNotifications = () => {
+        dispatch({ type: 'CLEAR_NOTIFICATIONS' });
+    }
+
     return {
         data,        
         handleAddToCart,
-        handelRemoveFromCart,
+        handleRemoveFromCart,
+        handleClearCart,
         handleAddNotification,
-        handleRemoveNotification
+        handleRemoveNotification,
+        handleClearNotifications
     }
 }

@@ -22,6 +22,11 @@ export const shopReducer = (state: ShopState, action: any): ShopState => {
                 ...state,
                 cart: state.cart.filter(item => item.id !== action.payload)
             };
+        case 'CLEAR_CART':
+            return {
+                ...state,
+                cart: []
+            };
         case 'ADD_NOTIFICATION':
             return {
                 ...state,
@@ -32,6 +37,11 @@ export const shopReducer = (state: ShopState, action: any): ShopState => {
                 ...state,
                 notifications: state.notifications.filter((_, index) => index !== action.payload)
             };
+        case 'CLEAR_NOTIFICATIONS':
+            return {
+                ...state,
+                notifications: []
+            };            
         default:
             return state;
     }
