@@ -13,7 +13,12 @@ const DetailProduct: React.FC<BookDetailProps> = ({
    book
 }) => {
     const { title, author, genre, price, rating, releaseDate, summary, imageUrl } = book;
-    const { addToCart} = useShop();
+    const { addToCart, addNotification} = useShop();
+
+    const handleAddToCart = () => {
+        addToCart(book);
+        addNotification(`Se ha agregado ${title} al carrito`);
+      }
      return (
         <div className="detail-product">
             <div className="image-container">
@@ -27,7 +32,7 @@ const DetailProduct: React.FC<BookDetailProps> = ({
                 <p><strong></strong> <Rating max={5} value={rating}/></p>
                 <p><strong>Fecha de lanzamiento:</strong> {releaseDate.toLocaleString()}</p>
                 <p><strong>Resumen:</strong> {summary}</p>
-                <button onClick={() =>  addToCart(book)} className="info-container-action"> <FaShoppingCart />Añadir al carrito</button>
+                <button onClick={handleAddToCart} className="info-container-action"> <FaShoppingCart />Añadir al carrito</button>
             </div>
         </div>
     );

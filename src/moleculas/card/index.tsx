@@ -7,18 +7,23 @@ import Rating from "../rating";
 
 
 export const Card: React.FC<any> = ({book}) => {    
-    const {addToCart} = useShop();
+    const {addToCart, addNotification} = useShop();
     const navigate = useNavigate();
 
     const handleClick = () => {
         navigate(`/detail/${book.id}`);
     }
 
+    const handleAddToCart = () => {
+      addToCart(book);
+      addNotification(`Se ha agregado ${book.title} al carrito`);
+    }
+
   return (
     <div className="card">
       <div className="card-header">
         <h2 className="card-title">{book.title}</h2>
-        <button className="card-add-to-cart" title="Agregar al carrito" onClick={() => addToCart(book)}>
+        <button className="card-add-to-cart" title="Agregar al carrito" onClick={handleAddToCart}>
             <FaCartPlus size={24} /> 
         </button>
       </div>

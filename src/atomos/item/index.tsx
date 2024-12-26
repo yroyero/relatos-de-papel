@@ -4,10 +4,11 @@ import "./style.css";
 import { FaTrashAlt } from "react-icons/fa";
 
 const CartItemCard: React.FC<any> = ({ id, title, price, quantity, image }) => {
-  const { removeFromCart } = useShop();
+  const { removeFromCart, addNotification } = useShop();
 
   const handleRemove = () => {
     removeFromCart(id);
+    addNotification(`Se ha eliminado ${title} del carrito`);
   };
 
   return (
