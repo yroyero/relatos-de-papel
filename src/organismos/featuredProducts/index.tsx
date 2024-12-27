@@ -9,7 +9,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ books, title }) => 
     return (
         <div className="featured-products">
             {title ? <h2>{title}</h2> : ''}           
-            <div className="featured-products__list">
+            <div className="featured-products-list">
             {books.map(book => (
                 <Card key={book.id} book={book} />                
             ))}

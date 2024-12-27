@@ -2,28 +2,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-   
+    padding: 10px 20px;   
     border-bottom: 1px solid #ddd;
 }
 
-.logo {
+.header-logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo img {
+.header-logo img {
     height: 40px;
     border-radius: 50%;
 }
 
-.logo span {
+.header-logo span {
     font-weight: 600;
     font-size: 20px;
 }
 
-.menu ul {
+.header-menu ul {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -31,51 +30,30 @@
     padding: 0;
 }
 
-.menu li {
+.header-menu li {
     display: inline;
     padding: 5px 5px;
     border-radius: 5px;
 }
 
-.menu li.active {
+.header-menu li.active {
     background-color: #3b6567;    
 }
 
-.menu a {
+.header-menu a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
 }
 
-.menu li.active a{
+.header-menu li.active a{
     color: #fff;
 }
 
-
-
-.user-section {
+.header-user-section {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-.user-info img {
-    height: 30px;
-    border-radius: 50%;
-}
-
-.shopping-cart {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.shopping-cart img {
-    height: 30px;
-}

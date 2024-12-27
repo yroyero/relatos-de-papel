@@ -34,34 +34,34 @@
     gap: 16px;
 }
 
-.card-image {
+.card-body-image {
     width: 80px;
     height: 135px;
     border-radius: 8px;
     margin-bottom: 16px;
 }
 
-.card-content {
+.card-body-content {
     width: 100%;
 }
 
-.card-author,
-.card-genre,
-.card-rating,
-.card-price {
+.card-body-content-author,
+.card-body-content-genre,
+.card-body-content-rating,
+.card-body-content-price {
     font-size: 1em;
     margin: 4px 0;
     color: #666;
 }
 
-.card-price {
+.card-body-content-price {
     font-weight: bold;
     color: #000;
 }
 
 
 
-.card-add-to-cart {
+.card-header-add-to-cart {
     padding: 10px 10px;
     background-color: #335658;
     color: #fff;
@@ -73,6 +73,6 @@
     height: 48px;
 }
 
-.card-add-to-cart:hover {
+.card-header-add-to-cart:hover {
     background-color: #203639;
 }

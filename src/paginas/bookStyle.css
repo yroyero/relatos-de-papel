@@ -6,18 +6,18 @@
 }
 
 
-.featured-products__filters {
+.featured-products-filters {
     margin-bottom: 20px;
     text-align: right;
 }
 
-.featured-products__filters label {
+.featured-products-filters label {
     margin-right: 10px;
     font-size: 1.2em;
     color: #555;
 }
 
-.featured-products__filters input {
+.featured-products-filters input {
     padding: 10px;
     width: 80%;
     max-width: 400px;
@@ -27,7 +27,7 @@
     transition: border-color 0.3s;
 }
 
-.featured-products__filters input:focus {
-    border-color: #007bff;
+.featured-products-filters input:focus {
+    border-color: #3b6567;
     outline: none;
 }

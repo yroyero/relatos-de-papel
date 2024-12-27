@@ -11,15 +11,12 @@ export const Header: React.FC = () => {
     }
     return (
         <div className="header">
-            <div className="logo">
+            <div className="header-logo">
                 <img src="/logo.png" alt="Logo" />
                 <span className="header-logo-title">Relatos de Papel</span>
             </div>
-           {/*  <div className="search-bar">
-                <input type="text" placeholder="Search..." />
-                <button type="submit">Search</button>
-            </div> */}
-            <nav className="menu">
+          
+            <nav className="header-menu">
                 <ul>
                     <li className={isActive('/home')}>
                     <Link to="/home">Inicio</Link>
@@ -35,11 +32,7 @@ export const Header: React.FC = () => {
                         </li>
                 </ul>
             </nav>           
-            <div className="user-section">               
-                {/* <div className="shopping-cart">
-                    <FaShoppingCart/>
-                    <span>3</span>
-                </div> */}
+            <div className="header-user-section"> 
                 <Alert />
                 <ShopCart />
             </div>

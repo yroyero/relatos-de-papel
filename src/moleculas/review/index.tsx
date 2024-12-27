@@ -7,9 +7,9 @@ const Review: React.FC<ReviewProps> = ({ author, content, date, rating }) => {
     return (
         <div className="review">
             <div className="review-header">
-                <h3 className="review-author">{author}</h3>
+                <h3 className="review-header-author">{author}</h3>
                 <Rating max={5} value={rating}/>
-                <span className="review-date">{date}</span>
+                <span className="review-header-date">{date}</span>
             </div>
             <p className="review-content">{content}</p>
         </div>

@@ -15,7 +15,7 @@ const Books: React.FC = () => {
 
   return (
     <div className="featured-products">
-      <div className="featured-products__filters">
+      <div className="featured-products-filters">
         <label htmlFor="search">Buscar por: </label>
         <input
           type="text"

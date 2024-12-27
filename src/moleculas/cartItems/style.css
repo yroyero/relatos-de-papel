@@ -26,12 +26,12 @@
     list-style: none;
  }
 
- .cart-content-resume .concept{
+ .cart-content-resume-concept{
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
  }
 
- .cart-content-resume .total{
+ .cart-content-resume-concept.total{
     font-weight: 600;
  }

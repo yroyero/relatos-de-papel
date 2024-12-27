@@ -43,21 +43,21 @@ const CartItems: React.FC = () => {
           <h4>Resumen de Compra</h4>
           <hr />
           <div>
-            <div className="concept">
+            <div className="cart-content-resume-concept">
               <span>Productos </span>
               <span>{totalItems}</span>
             </div>
-            <div className="concept">
+            <div className="cart-content-resume-concept">
               <span>Subtotal </span>
               <span>${total.toFixed(2)} </span>
             </div>
-            <div className="concept">
+            <div className="cart-content-resume-concept">
               <span>Iva: </span>
               <span>${iva.toFixed(2)} </span>
             </div>
           </div>
             <hr />
-            <div className="concept total">
+            <div className="cart-content-resume-concept total">
               <span>Total </span>
               <span>${(total + iva).toFixed(2)} </span>
               </div>

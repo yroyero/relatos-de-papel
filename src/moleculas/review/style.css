@@ -21,13 +21,13 @@
     margin-bottom: 8px;
 }
 
-.review-author {
+.review-header-author {
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
 }
 
-.review-date {
+.review-header-date {
     font-size: 0.9em;
     color: #999;
 }

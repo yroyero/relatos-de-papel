@@ -14,6 +14,7 @@ const images = [
 const Banner: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [timer, setTimer] = useState<number>(5000);
+    let pos = 1;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -37,7 +38,7 @@ const Banner: React.FC = () => {
             <div className="carousel-images">
                 {images.map((image, index) => (
                     <img
-                        key={index}
+                        key={pos++}
                         src={image}
                         alt={`Slide ${index}`}
                         className={index === currentIndex ? 'active' : ''}
