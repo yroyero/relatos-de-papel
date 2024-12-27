@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from '../organismos/banner';
+import Banner from '../moleculas/banner';
 import FeaturedProducts from '../organismos/featuredProducts';
 import { useNewestBooks } from '../hooks/useProducts';
 

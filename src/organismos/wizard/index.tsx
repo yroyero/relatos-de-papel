@@ -1,8 +1,8 @@
 import { useState } from "react";
 import CartItems from "../../moleculas/cartItems";
-import PaymentForm from "../payment";
+import PaymentForm from "../../moleculas/payment";
 import "./style.css";
-import ShippingForm from "../shipping";
+import ShippingForm from "../../moleculas/shipping";
 import { PaymentData, Shipping } from "../../@types";
 import { useShop } from "../../context/ShopContext";
 import { useNavigate } from "react-router-dom";
