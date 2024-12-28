@@ -11,11 +11,12 @@ export const Header: React.FC = () => {
     }
     return (
         <div className="header">
+           
             <div className="header-logo">
-                <img src="/logo.png" alt="Logo" />
+            <Link to={'/'}> <img src="/logo.png" alt="Logo" /></Link>
                 <span className="header-logo-title">Relatos de Papel</span>
             </div>
-          
+            
             <nav className="header-menu">
                 <ul>
                     <li className={isActive('/home')}>
