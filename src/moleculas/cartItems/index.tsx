@@ -12,7 +12,7 @@ const CartItems: React.FC = () => {
   useEffect(() => {
     const auxIva = cart.reduce((acc, item) => acc + item.price * item.quantity, 0) * 0.12;
     setIva(auxIva);
-    const auxTotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0) + auxIva;
+    const auxTotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
     setTotal(auxTotal);
     const auxTotalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
     setTotalItems(auxTotalItems);
