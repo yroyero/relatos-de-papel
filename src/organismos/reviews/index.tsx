@@ -1,5 +1,5 @@
 import React from "react";
-import Review from "../../moleculas/review";
+import Review from "../../atomos/review";
 import "./style.css";
 
 const Comments: React.FC = () => {

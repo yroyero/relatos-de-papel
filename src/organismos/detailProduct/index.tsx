@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { Product } from '../../@types';
 import { useShop } from '../../context/ShopContext';
-import Rating from '../../moleculas/rating';
+import Rating from '../../atomos/rating';
 import { FaShoppingCart } from 'react-icons/fa';
 
 interface BookDetailProps {

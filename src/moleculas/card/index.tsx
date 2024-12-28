@@ -3,7 +3,7 @@ import "./style.css";
 import { FaCartPlus } from "react-icons/fa";
 import { useShop } from "../../context/ShopContext";
 import { useNavigate } from "react-router-dom";
-import Rating from "../rating";
+import Rating from "../../atomos/rating";
 
 
 export const Card: React.FC<any> = ({book}) => {    
