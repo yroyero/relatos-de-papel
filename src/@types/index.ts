@@ -1,7 +1,8 @@
+import { Method } from './../../node_modules/axios/index.d';
 //título, autor, género o palabras clave, con la opción de filtrar resultados según
 //diversos criterios como precio, popularidad o fecha de lanzamiento. 
 export interface Product {
-    id: number;
+    id: string;
     title: string;
     author: string;
     genre: string;
@@ -23,7 +24,7 @@ export interface ShopState {
 }
 
 export interface FeaturedProductsProps {
-    books: Product[];
+    books?: Product[];
     title?: string;
 }
 
@@ -50,3 +51,37 @@ export interface PaymentData {
     expiryDate: string;
     cvv: string;
 }
+
+
+export interface ElasticBooks   {
+    aggs: any[];
+    books: Product[];
+ }
+
+export type MethodType = 'GET' | 'POST' | 'PUT' | 'DELETE';
+export interface APIRequest<T> {
+    targetMethod: MethodType;
+    body?: T,
+    queryParams?: T,
+    isFormData?: boolean;
+}
+
+
+ export interface API<T> {
+    data?: T;
+    message?: string;
+    trace: {
+      transactions: ITransaction[];
+    };
+  }
+    
+  export interface ITransaction {
+    name: string;
+    beTime?: number;
+ }
+
+ export interface IResult<T> {
+    result?: T;
+    error?: string;
+    loading: boolean;
+  }

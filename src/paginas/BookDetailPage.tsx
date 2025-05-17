@@ -9,12 +9,12 @@ import './detail.css';
 
 const BookDetail: React.FC = () => { 
     const { idBook } = useParams<{ idBook: string }>();
-    const book = useBook(parseInt(idBook ?? '-1'));
+    const {result, error, loading} = useBook(idBook ?? '-1');
 
     return (
         <div className="book-detail-page">
-           {book && <DetailProduct book= {book} />}
-           {!book && <div>Libro no encontrado</div>}
+           {result && <DetailProduct book= {result} />}
+           {!result && <div>Libro no encontrado</div>}
            <Comments />
         </div>
     );

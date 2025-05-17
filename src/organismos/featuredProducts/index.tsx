@@ -10,7 +10,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({ books, title }) => 
         <div className="featured-products">
             {title ? <h2>{title}</h2> : ''}           
             <div className="featured-products-list">
-            {books.map(book => (
+            {books?.map(book => (
                 <Card key={book.id} book={book} />                
             ))}
             </div>
