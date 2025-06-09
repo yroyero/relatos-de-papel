@@ -28,9 +28,9 @@ const DetailProduct: React.FC<BookDetailProps> = ({
                 <h1>{title}</h1>
                 <p><strong>Autor:</strong> {author}</p>
                 <p><strong>Género:</strong> {genre}</p>
-                <p><strong>Precio:</strong> ${price.toFixed(2)}</p>
+                <p><strong>Precio:</strong> ${price?.toFixed(2)}</p>
                 <div><Rating max={5} value={rating}/></div>
-                <p><strong>Fecha de lanzamiento:</strong> {releaseDate.toLocaleString()}</p>
+                <p><strong>Fecha de lanzamiento:</strong> {releaseDate?.toLocaleString()}</p>
                 <p><strong>Resumen:</strong> {summary}</p>
                 <button onClick={handleAddToCart} className="detail-product-info-action"> <FaShoppingCart />Añadir al carrito</button>
             </div>

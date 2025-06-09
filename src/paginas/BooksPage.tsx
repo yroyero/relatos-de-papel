@@ -9,30 +9,29 @@ const Books: React.FC = () => {
   const [books, setBooks] = useState<Product[]>([]);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState(getBooks);
- // const searchBooks = useSearchBooks(search);
+  const searchBooks = useSearchBooks(search);
   const {data, loading, error} = useFetchBooks(filter);
   const {result, callTx} = useFeaturedBooks();
 
- /* useEffect(() => {    
-
-    setBooks(data.books);
-   /* callTx({
-      targetMethod: 'GET',
-      body: {search: search},
-    });
-  },[data]);*/
+  useEffect(() => {    
+    console.log("Books data:", data);
+    setBooks(data.data);  
+  },[data]);
 
   useEffect(() => {
-    callTx({
-      targetMethod: 'GET',
-      queryParams: {descripcion: [search]},
-    })
-  }, [search,callTx]);
+    if (search) {
+      setBooks(searchBooks.data);
+    } else {
+      setBooks(data.data);
+    }
+  }, [search, searchBooks, data]);
 
   useEffect(() => {
 
    setBooks(result ? result.books : []);
   }, [result]);
+
+ 
 
   return (
     <div className="featured-products">
