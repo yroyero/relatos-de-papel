@@ -202,7 +202,7 @@ export const useSearchBooks = (query: string) => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(fullPath(`${getBooks}?search=${query}`));
-                setData(filterData(response.data.data));
+                setData(response.data);
             } catch (err: any) {
                 setError(err.message);
             } finally {
@@ -211,17 +211,7 @@ export const useSearchBooks = (query: string) => {
         };
 
         fetchData();
-    }, [query]);
-
-    const filterData = (data: Product[]) => {
-         const lowerCaseQuery = query.toLowerCase();
-        return {data: data.filter(book =>
-            book.title.toLowerCase().includes(lowerCaseQuery) ||
-            book.author.toLowerCase().includes(lowerCaseQuery) ||
-            book.genre.toLowerCase().includes(lowerCaseQuery) ||
-            book.price.toString().includes(lowerCaseQuery) 
-        )};
-    }
+    }, [query]);   
 
     return  data;
 };

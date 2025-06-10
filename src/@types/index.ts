@@ -52,6 +52,23 @@ export interface PaymentData {
     cvv: string;
 }
 
+export interface Order {
+    id?: number
+    fecha: Date;
+    montoTotal: number;
+    descuento: number;
+    estado: string;
+    nombreCliente: string;
+    items: OrderItem[];
+}
+
+export interface OrderItem {
+    id?: number;
+    cantidad: number;
+    libroId: number;
+    monto: number;
+}
+
 
 export interface ElasticBooks   {
     aggs: any[];

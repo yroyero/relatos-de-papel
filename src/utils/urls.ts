@@ -5,8 +5,9 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 export { API_URL, API_KEY };
 
 const getBooks = '/api/v1/libros';
+const getOrders = '/api/v1/pedidos';
 
-export { getBooks };
+export { getBooks, getOrders };
 
 const fullPath = (action:string) => `${API_URL}${action}`;
 

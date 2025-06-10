@@ -6,9 +6,11 @@ import ShippingForm from "../../moleculas/shipping";
 import { PaymentData, Shipping } from "../../@types";
 import { useShop } from "../../context/ShopContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { fullPath, getOrders } from "../../utils/urls";
 
 const ItemWizard: React.FC = () => {
-  const { clearCart, addNotification } = useShop();
+  const { clearCart, addNotification,cart } = useShop();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [shippingData, setShippingData] = useState<Shipping>({
@@ -47,6 +49,7 @@ const ItemWizard: React.FC = () => {
       }
     }
     if (currentStep === 3) {
+      handlePayOrder();
       alert("Gracias por su compra");
       finalStep("Compra realizada con éxito");
     }
@@ -56,6 +59,27 @@ const ItemWizard: React.FC = () => {
   const clearShoppingCart = () => {
     finalStep("Compra cancelada");
   };  
+
+  const handlePayOrder = () => {
+      const itemsOrder = cart.map((item) => {
+        return {
+          libroId: item.id,
+          cantidad: item.quantity,
+          monto: item.price,
+        };
+      });
+      const order = {
+        fecha: new Date(),
+        montoTotal: cart.reduce((total, item) => total + item.price * item.quantity, 0),
+        descuento: 0,
+        estado: "Pendiente",
+        nombreCliente: shippingData.name,
+        items: itemsOrder,
+      };
+
+      // Aquí podrías enviar la orden al backend o procesarla como necesites
+       axios.post(fullPath(getOrders), order);
+  }
 
   return (
     <div className="item-wizard">
